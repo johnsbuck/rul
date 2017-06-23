@@ -43,7 +43,7 @@ def load_phm(test_flag=True, final_flag=False):
     folder = "phm"
     dataset = {}
     dataset["data"] = load_data(module_path, folder, "train.csv")
-    dataset["target"] = load_data(module_path, folder, "train_rul.csv")
+    dataset["target"] = load_data(module_path, folder, "train_target.csv")
 
     if test_flag:
         dataset["test"] = load_data(module_path, folder, "test.csv")
@@ -70,12 +70,12 @@ def load_cmapss(data_num=1, test_flag=True, answer_flag=False):
     folder = "cmapss_" + str(data_num)
     dataset = {}
     dataset["data"] = load_data(module_path, folder, "train.csv")
-    dataset["target"] = load_data(module_path, folder, "train_rul.csv")
+    dataset["target"] = load_data(module_path, folder, "train_target.csv")
 
     if test_flag:
         dataset["test"] = load_data(module_path, folder, "test.csv")
     if answer_flag:
-        dataset["test_target"] = load_data(module_path, folder, "test_rul.csv")
+        dataset["test_rul"] = load_data(module_path, folder, "test_rul.csv")
 
     return dataset
 
